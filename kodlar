@@ -1,0 +1,28 @@
+#include <Servo.h>
+
+Servo servo;
+int angle = 0;
+
+void setup() 
+{
+	servo.attach(8); //Servo motorunun bağlandığı pin 8
+}
+
+void loop()
+{
+	/*
+		Motorun açısını kendi klavyenize göre düzenleyebilirsiniz. Düzenleme için;
+		ilk for döngüsündeki angle <= 130 daki 130'u ve ikinci for döngüsündeki
+		angle = 130 daki 130'u değiştirmelisiniz. Açılar için başka değişiklik yapmayınız.
+		Motorun hızını arttırmak için delay(5); lerin içlerindeki 5'leri 4-3-2-1 gibi değiştirip
+		deneyebilirsiniz. 
+	*/
+	for(angle = 0; angle <= 130; angle++){
+		servo.write(angle);
+		delay(5);
+	}
+	for(angle = 130; angle >=0; angle--){
+		servo.write(angle);
+		delay(5);
+	}
+}
